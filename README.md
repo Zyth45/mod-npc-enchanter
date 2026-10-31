@@ -7,6 +7,7 @@ the gear a player wears. Off by default (`EnchanterNpc.Enable = 0`).
   skill 333) with an "enchant item" effect. CoA's own recipes are included.
 - Each enchantment has a tier: 60 (classic and CoA content), 70 (The Burning Crusade),
   80 (Wrath of the Lich King). `EnchanterNpc.AllowedTiers` chooses the tiers offered (default "60").
+- One NPC in each of the eight capitals (enchanting shops), invisible while the module is off.
 - A per-spell tier fix or ban goes in the world table `mod_npc_enchanter_override`.
 - Settings: see `conf/npc_enchanter.conf.dist`.
 
