@@ -17,9 +17,9 @@
 
 #    EnchanterNpc.Enable
 #        Description: Turn the enchanter on. When off, the NPC is invisible and does nothing.
-#        Default:     0 - (Disabled)
-#                     1 - (Enabled)
-EnchanterNpc.Enable = 0
+#        Default:     1 - (Enabled)
+#                     0 - (Disabled)
+EnchanterNpc.Enable = 1
 
 #    EnchanterNpc.AllowedTiers
 #        Description: Comma separated list of the enchantment tiers the NPC offers.

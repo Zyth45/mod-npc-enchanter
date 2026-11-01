@@ -1,7 +1,7 @@
 # mod-npc-enchanter (SquidBots)
 
 An NPC (entry 9785001, script `npc_enchanter_squidbots`) that applies permanent enchantments to
-the gear a player wears. Off by default (`EnchanterNpc.Enable = 0`).
+the gear a player wears. On by default (`EnchanterNpc.Enable = 1`, SquidBots 2.9); set it to 0 to hide the NPC.
 
 - The enchantment list comes from the client data: every Enchanting recipe (SkillLineAbility,
   skill 333) with an "enchant item" effect. CoA's own recipes are included.
