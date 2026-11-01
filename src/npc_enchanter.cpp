@@ -123,6 +123,15 @@ namespace
     std::unordered_map<uint32, std::pair<uint32, bool>> LoadOverrides()
     {
         std::unordered_map<uint32, std::pair<uint32, bool>> overrides;
+        // A missing table stops the worldserver on the query (database not up to date): the module SQL may not be
+        // applied yet, so look for the table first and run without overrides if it is not there.
+        if (!WorldDatabase.Query("SELECT 1 FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() AND "
+                                 "TABLE_NAME = 'mod_npc_enchanter_override'"))
+        {
+            LOG_ERROR("module", "mod-npc-enchanter: table mod_npc_enchanter_override missing, apply the module SQL; "
+                                "running without overrides.");
+            return overrides;
+        }
         QueryResult result = WorldDatabase.Query("SELECT `spell_id`, `tier`, `enabled` FROM `mod_npc_enchanter_override`");
         if (!result)
             return overrides;
